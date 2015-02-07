@@ -9,8 +9,13 @@
 #ifndef __SDL_Game_Sample__sprite__
 #define __SDL_Game_Sample__sprite__
 
-#include <stdio.h>
+#ifdef WIN32
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
+
+#include <stdio.h>
 
 struct sprite {
     SDL_Surface* image;

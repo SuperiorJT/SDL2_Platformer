@@ -4,7 +4,12 @@
 #define SCREEN_SCALE 1
 #define SCREEN_NAME "Prototype"
 
+#ifdef WIN32
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
+
 #include <stdio.h>
 
 void game_init(void);

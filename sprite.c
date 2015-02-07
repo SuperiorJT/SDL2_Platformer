@@ -8,6 +8,3 @@
 
 #include "sprite.h"
 
-void (*moveX)(int distance) {
-    
-}
