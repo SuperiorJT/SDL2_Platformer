@@ -20,9 +20,15 @@
 struct sprite {
     SDL_Surface* image;
     SDL_Rect* sprite;
+
+	void (*destroy)(void* self);
     
-    void (*moveX)(int);
-    void (*moveY)(int);
+    void (*moveX)(void* self, int magnitude);
+    void (*moveY)(void* self, int magnitude);
 };
+
+typedef struct sprite Sprite;
+
+Sprite* Sprite_init(SDL_Surface* temp, const char* bmp);
 
 #endif /* defined(__SDL_Game_Sample__sprite__) */

@@ -13,7 +13,7 @@
 #include "sprite.h"
 
 struct entity {
-    struct sprite sprite;
+    Sprite sprite;
 };
 
 #endif /* defined(__SDL_Game_Sample__entity__) */

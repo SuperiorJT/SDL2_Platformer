@@ -11,6 +11,7 @@
 #endif
 
 #include <stdio.h>
+#include "sprite.h"
 
 void game_init(void);
 void game_quit(void);
