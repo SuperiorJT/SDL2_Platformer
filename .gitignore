@@ -157,3 +157,10 @@ $RECYCLE.BIN/
 *.sln
 *.vcxproj
 *.filters
+
+
+# =========================
+# Linux Ignores
+# =========================
+
+game
