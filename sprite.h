@@ -18,17 +18,14 @@
 #include <stdio.h>
 
 struct sprite {
-    SDL_Surface* image;
-    SDL_Rect* sprite;
+    SDL_Texture* image;
+    SDL_Rect* rect;
 
 	void (*destroy)(void* self);
-    
-    void (*moveX)(void* self, int magnitude);
-    void (*moveY)(void* self, int magnitude);
 };
 
 typedef struct sprite Sprite;
 
-Sprite* Sprite_init(SDL_Surface* temp, const char* bmp);
+Sprite* Sprite_init(SDL_Renderer* renderer, const char* bmp);
 
 #endif /* defined(__SDL_Game_Sample__sprite__) */
