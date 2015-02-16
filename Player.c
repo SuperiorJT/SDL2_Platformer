@@ -42,6 +42,9 @@ void Player_handleCollision(void* playerObject, void* selfRect, void* otherRect)
                 //printf("gets Bottom");
                 break;
             case TOP:
+                player->state->pos.y = other->y + other->h;
+                playerRect->y = round(player->state->pos.y);
+                player->state->vel.y = 0;
                 //printf("gets Top");
                 break;
             case LEFT:
@@ -70,8 +73,11 @@ void Player_jump(void* self, float dt) {
 
 void Player_move(void* self, float x, float dt) {
     Player* this = self;
+    if (this->jumping == SDL_TRUE) {
+        x = x * 0.85;
+    }
     this->state->vel.x += x * dt;
-    if (x == 0) {
+    if (x == 0 && this->jumping == SDL_FALSE) {
         if (this->state->vel.x > 0) {
             this->state->vel.x -= .05 * dt;
         }
