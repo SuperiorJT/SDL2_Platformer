@@ -78,10 +78,14 @@ void generateDemo(Block* blocks[]) {
         blocks[blockIndex] = Block_init(Game.screen.renderer, "block.bmp", i, floorY);
         blockIndex++;
     }
+    for (int i = 320; i < 416; i += 32) {
+        blocks[blockIndex] = Block_init(Game.screen.renderer, "block.bmp", i, 384);
+        blockIndex++;
+    }
 }
 
 void renderBlocks(Block* blocks[]) {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 23; i++) {
         SDL_RenderCopy(Game.screen.renderer, blocks[i]->sprite->image, NULL, blocks[i]->sprite->rect);
     }
 }
@@ -103,7 +107,7 @@ void updatePlayer(Player* player, const Uint8* keystate, float timeStep) {
 }
 
 void checkCollisions(Player* player, Block* blocks[]) {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 23; i++) {
         player->handleCollision(player, player->sprite->rect, blocks[i]->sprite->rect);
     }
 }
@@ -115,7 +119,7 @@ int main(int argc,char *argv[])
     printf("running = %d\n", Game.running);
     
     Player* player = Player_init(Game.screen.renderer, "player.bmp");
-    Block* blocks[20];
+    Block* blocks[23];
     
     generateDemo(blocks);
     
