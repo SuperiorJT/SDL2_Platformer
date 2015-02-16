@@ -21,7 +21,7 @@
  *  \sa getCollisionSide
  */
 enum CollisionSide {
-    TOP, RIGHT, BOTTOM, LEFT
+    TOP, RIGHT, BOTTOM, LEFT, UNKNOWN
 };
 
 typedef enum CollisionSide CollisionSide;

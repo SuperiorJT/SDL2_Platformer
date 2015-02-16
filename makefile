@@ -1,5 +1,5 @@
-CC = gcc
-OFILES = main.o sprite.o
+CC = gcc -std=c99
+OFILES = main.o sprite.o Block.o Collision.o numbers.o Player.o
 CFLAGS = -lSDL2
 LDFLAGS = 
 

@@ -68,5 +68,5 @@ CollisionSide getCollisionSide(SDL_Rect* a, SDL_Rect* b) {
         return RIGHT;
     }
     printf("Error: Collision side not detected\n");
-    return NULL;
+    return UNKNOWN;
 }
